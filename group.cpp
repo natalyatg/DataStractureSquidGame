@@ -4,13 +4,11 @@
 group::group(int group_id):
         group_id(group_id),
         num_of_players(0),
-        //max_level_player(nullptr),
         players_level()
         {}
 group::group():
         group_id(0),
         num_of_players(0),
-        //max_level_player(nullptr),
         players_level()
         {}
 
@@ -18,7 +16,6 @@ group::group():
 group::group(const group& group):
     group_id(group.group_id),
     num_of_players(group.num_of_players),
-    //max_level_player(group.max_level_player),
     players_level(group.players_level)
     {}
 
@@ -31,7 +28,6 @@ group& group::operator=(const group& group)
     }
     this->group_id = group.group_id;
     this->num_of_players = group.num_of_players;
-    //this->max_level_player = group.max_level_player;
     this->players_level = group.players_level;
     return *this;
 }
@@ -95,13 +91,8 @@ int group::getNumOfPlayers()
 
 level& group::getMaxGroupPlayer() const
 {
-    //return this->players_level.g
     return this->players_level.getMaxData();
 }
-// void group::changeTree(const AVLTree<level>& players_level)
-// {
-//     this->players_level=players_level;
-// }
 
 level* group::getLeveTreeToArray() const
 {
