@@ -80,11 +80,9 @@ StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
 
 void Quit(void** DS)
 {
-    //CarDealerShip *to_destroy = static_cast<CarDealerShip*>(*DS);
     PlayersManager* pm = (PlayersManager*)*DS;
     (pm)->Quit();
     delete pm;
-    //((PlayersManager*)DS)->Quit();
     *DS = NULL;
 }
 
