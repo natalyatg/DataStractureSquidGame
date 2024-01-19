@@ -27,7 +27,7 @@ group* groupInfo::getGroupPtr() const
 
 void groupInfo::updateGroupPtr(group* new_group_ptr)
 {
-    this->group_nt = new_group_ptr;//need to delete the old pointer??
+    this->group_nt = new_group_ptr;
     
 }
 
