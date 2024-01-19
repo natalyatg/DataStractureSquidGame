@@ -41,11 +41,6 @@ bool player::operator==(const player& player) const
     return this->player_id == player.player_id;
 }
 
-// group* player::getGroupPtr() const
-// {
-//     return this->group_ptr;
-// }
-
 std::shared_ptr<groupInfo> player::getGroupInfoPtr()
 {
     return this->group_info_ptr;
@@ -61,11 +56,6 @@ void player::increasePlayerLevel(const int points)
     this->level = this->level + points;
 }
 
-// void player::updateGroupPtr(group* new_group_ptr)
-// {
-//     this->group_ptr = new_group_ptr;//need to delete the old pointer??
-    
-// }
 
 
 
