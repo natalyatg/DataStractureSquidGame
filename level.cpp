@@ -54,21 +54,10 @@ bool level::operator==(const level& level) const
     return player_id==level.player_id;
 }
 
-/*player* level::getPlayerPtr() const
-{
-    return this->player_ptr;
-}*/
-
 std::shared_ptr<groupInfo> level::getGroupInfoPtr()
 {
     return this->group_info_ptr;
 }
-
-
-/*
-    T *t_ptr = &(new_node->data);
-    return t_ptr;
-*/
 
 int level::getPlayerID() const
 {
