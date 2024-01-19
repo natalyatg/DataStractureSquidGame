@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-//#include "group.h"
+
 #include <memory>
 #include "groupInfo.h"
 
@@ -19,11 +19,9 @@ public:
     ~player() = default;
     bool operator<(const player& player) const;
     bool operator==(const player& player) const;
-    // group* getGroupPtr() const;
     std::shared_ptr<groupInfo> getGroupInfoPtr();
     int getPlayerLevel() const;
     void increasePlayerLevel(const int points);
-    //void updateGroupPtr(group* new_group_ptr);
 };
 
 #endif
