@@ -4,7 +4,6 @@
 #include <memory>
 #include "AVLTree.h"
 #include "level.h"
-//class level;
 
 class group{
 private:
@@ -29,7 +28,6 @@ public:
     level& getGroupPlayer(const level& player_level) const;
     level& getMaxGroupPlayer() const;
     void mergeLevelTree(const group& group);//need to be const??
-    //void changeTree(const AVLTree<level>& players_level);
     level* getLeveTreeToArray() const;
     
 };
