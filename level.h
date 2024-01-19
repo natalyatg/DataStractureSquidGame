@@ -1,7 +1,6 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-//#include "groupInfo.h"
 #include <memory>
 class groupInfo;
 
@@ -18,7 +17,6 @@ public:
     level& operator=(const level& level);
     bool operator<(const level& level) const;
     bool operator==(const level& level) const;
-    //player* getPlayerPtr() const;
     std::shared_ptr<groupInfo> getGroupInfoPtr();
     int getPlayerID() const;
 };
