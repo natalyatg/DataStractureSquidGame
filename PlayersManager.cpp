@@ -22,7 +22,6 @@ PlayersManager& PlayersManager::operator=(const PlayersManager& PlayersManager)
     this->AVL_all_players_id = PlayersManager.AVL_all_players_id;
     this->AVL_all_levels = PlayersManager.AVL_all_levels;
     this->num_of_players = PlayersManager.num_of_players;
-    //this->max_level = PlayersManager.max_level;
     return *this;
 }
 
@@ -56,20 +55,9 @@ StatusType PlayersManager::AddPlayer(int PlayerID, int GroupID, int Level)
     
         group* group_new_ptr = this->AVL_groups.getDataPtr(tmp_group);
         std::shared_ptr<groupInfo> g_shared_ptr = std::shared_ptr<groupInfo>(new groupInfo(group_new_ptr));
-        //std::shared_ptr<groupInfo> group_info_ptr(group_new_ptr);
-
-        //group_info_ptr->updateGroupPtr(group_new_ptr);
-        //group* group_new_ptr = this->AVL_groups.getDataPtr(tmp_group);
-        //create here shared ptr to player info with the grp ptr
-
-        //Character* character = nullptr;
-        // character = new Soldier(health, ammo, range, power, soldier_move, soldier_ammo, team);
-        //     return std::shared_ptr<Character>(character);
         
         player new_player(PlayerID,g_shared_ptr,Level);
         this->AVL_all_players_id.insert(new_player);
-        //irelevant
-        //player* player_new_ptr = this->AVL_all_players_id.getDataPtr(new_player);
         level new_player_level(Level, PlayerID, nullptr);
         //change the mazbia
         level new_group_level(Level, PlayerID, g_shared_ptr);
@@ -115,7 +103,7 @@ StatusType PlayersManager::RemovePlayer(int PlayerID)
     return SUCCESS;
 }
 
-StatusType PlayersManager::ReplaceGroup(int GroupID, int ReplacementID)//need to add errors
+StatusType PlayersManager::ReplaceGroup(int GroupID, int ReplacementID)
 {
     group old_group(GroupID);
     group new_group(ReplacementID);
@@ -220,10 +208,6 @@ StatusType PlayersManager::GetAllPlayersByLevel(int GroupID, int **Players, int 
         {
             players_arr[this->num_of_players-1-i]=levelTree[i].getPlayerID();
         }
-        // for(int i=0;i<this->num_of_players;i++)
-        // {
-        //     players_arr[i]=levelTree[i].getPlayerID();
-        // }
         *numOfPlayers = this->num_of_players;
         *Players = players_arr;
         delete []levelTree;
@@ -236,7 +220,6 @@ StatusType PlayersManager::GetAllPlayersByLevel(int GroupID, int **Players, int 
     }
     group* group_new_ptr = this->AVL_groups.getDataPtr(tmp_group);
     int* players_arr = (int*)malloc(this->num_of_players*sizeof(int));
-    //level *levelTree = new level[group_new_ptr->getNumOfPlayers()];
      level * levelTree = group_new_ptr->getLeveTreeToArray();
     for(int i=group_new_ptr->getNumOfPlayers()-1;i>=0;i--)
     {    
