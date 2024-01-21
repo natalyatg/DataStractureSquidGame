@@ -14,7 +14,6 @@ private:
     AVLTree<player> AVL_all_players_id;
     AVLTree<level> AVL_all_levels;
     int num_of_players;    
-    //std::shared_ptr<player> max_level;
 
 public:
     PlayersManager();
