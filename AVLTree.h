@@ -22,7 +22,6 @@ class AVLTree {
         Node* left;
         Node* right;
         int height;  
-        //Node(T const &new_data);
     };
     Node* root;
     Node* max;
@@ -74,9 +73,6 @@ class AVLTree {
 
 };
 // ----------- Node -----------
-
-//template <class T>
-//AVLTree<T>::Node::Node(T const &new_data) : right(nullptr), left(nullptr),data(new_data), height(0){}
 
 template <class T>
 typename AVLTree<T>::Node* AVLTree<T>::createNode(const T &data)
@@ -509,7 +505,7 @@ void AVLTree<T>::printInorder() const
 
 //function that merge two sorted arrays to one sorted array
 template <class T>
-T* AVLTree<T>::mergeArrays(T arr1[] , T arr2[], int m , int n) //need to delete the two arrays?
+T* AVLTree<T>::mergeArrays(T arr1[] , T arr2[], int m , int n) 
 {
    
     T *merge_arr = new T[m+n];
@@ -621,10 +617,8 @@ T* AVLTree<T>::getDataPtr(const T &value)
 template <class T>
 T& AVLTree<T>::getMaxData() const
 {
-    //this->max
     Node* tmp_node = this->max;
     return tmp_node->data;
-    //return *(this->max);
 }
 
 template <class T>
